@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word & Wisdom Academy | Spoken English Classes in Saligramam</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display for academic feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0B192C',
+                            900: '#1E2E45',
+                            950: '#0F172A',
+                        },
+                        amber: {
+                            400: '#F59E0B',
+                            500: '#D97706',
+                            600: '#B45309',
+                        },
+                        cream: '#FDFBF7',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-pattern {
+            background-color: #0F172A;
+            background-image: radial-gradient(#F59E0B 0.75px, transparent 0.75px), radial-gradient(#F59E0B 0.75px, #0F172A 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0,15px 15px;
+            opacity: 0.98;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-cream text-gray-800 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-amber-500 text-navy-950 py-1.5 px-4 text-xs md:text-sm font-semibold text-center tracking-wide">
+        <span class="inline-block bg-navy-900 text-amber-400 text-xs px-2 py-0.5 rounded mr-2 font-bold uppercase">New Admissions</span>
+        Batches starting this week in Saligramam! Free Demo Class Available. 
+        <a href="#enquiry" class="underline hover:text-navy-900 font-bold ml-1">Book Slot &rarr;</a>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-gray-800 text-white transition-all shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold text-navy-950 text-xl">W&W</i>
+                    </div>
+                    <div>
+                        <span class="text-xl md:text-2xl font-serif font-bold text-white tracking-tight block leading-none">
+                            Word <span class="text-amber-400">&</span> Wisdom
+                        </span>
+                        <span class="text-[10px] uppercase tracking-widest text-amber-200/80 font-medium block mt-1">Academy • Saligramam</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Items -->
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="text-gray-300 hover:text-amber-400 transition-colors">About Us</a>
+                    <a href="#courses" class="text-gray-300 hover:text-amber-400 transition-colors">Courses & Modes</a>
+                    <a href="#schedule" class="text-gray-300 hover:text-amber-400 transition-colors">Schedule</a>
+                    <a href="#why-us" class="text-gray-300 hover:text-amber-400 transition-colors">Why Choose Us</a>
+                    <a href="#contact" class="text-gray-300 hover:text-amber-400 transition-colors">Contact</a>
+                </div>
+
+                <!-- CTA Button & Mobile Toggle -->
+                <div class="flex items-center space-x-4">
+                    <a href="#enquiry" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-sm shadow-md transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-graduation-cap mr-2"></i> Free Demo Class
+                    </a>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-800 bg-navy-900 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block text-gray-300 hover:text-amber-400 py-2 text-base font-medium">About Us</a>
+            <a href="#courses" class="block text-gray-300 hover:text-amber-400 py-2 text-base font-medium">Courses & Modes</a>
+            <a href="#schedule" class="block text-gray-300 hover:text-amber-400 py-2 text-base font-medium">Schedule & Timings</a>
+            <a href="#why-us" class="block text-gray-300 hover:text-amber-400 py-2 text-base font-medium">Why Choose Us</a>
+            <a href="#contact" class="block text-gray-300 hover:text-amber-400 py-2 text-base font-medium">Contact Location</a>
+            <a href="#enquiry" class="block w-full text-center py-3 bg-amber-500 text-navy-950 font-bold rounded-lg shadow mt-2">Book Free Demo Class</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-pattern text-white relative overflow-hidden py-16 md:py-24 border-b border-amber-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-navy-800/80 border border-amber-500/30 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium text-amber-300">
+                        <i class="fa-solid fa-location-dot text-amber-400"></i>
+                        <span>Saligramam's Premier Spoken English Center</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white leading-tight">
+                        Speak English with <br class="hidden sm:inline"/>
+                        <span class="gradient-text">Confidence & Eloquence</span>
+                    </h1>
+
+                    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Master fluent communication, public speaking, and professional vocabulary. Tailored interactive training programs for age groups <span class="text-amber-400 font-semibold">10 to 35 years</span> in Saligramam.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#enquiry" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-navy-950 font-bold text-base shadow-lg shadow-amber-500/25 transition-all text-center">
+                            Enroll Now / Book Free Demo
+                        </a>
+                        <a href="#schedule" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card hover:bg-white/10 text-white font-semibold text-base transition-all border border-gray-700 text-center">
+                            Explore Batches & Timings
+                        </a>
+                    </div>
+
+                    <!-- Quick highlights grid -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-gray-800 text-center">
+                        <div>
+                            <p class="text-2xl md:text-3xl font-bold text-amber-400 font-serif">10–35 Yrs</p>
+                            <p class="text-xs text-gray-400 mt-1">Students & Professionals</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl md:text-3xl font-bold text-amber-400 font-serif">Dual Mode</p>
+                            <p class="text-xs text-gray-400 mt-1">Online & Offline</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl md:text-3xl font-bold text-amber-400 font-serif">Flexible</p>
+                            <p class="text-xs text-gray-400 mt-1">Weekdays & Weekends</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Card / Quick Registration Spotlight -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 relative shadow-2xl border border-amber-500/20">
+                        <div class="absolute -top-3 -right-3 bg-amber-500 text-navy-950 text-xs font-extrabold uppercase px-3 py-1 rounded-full shadow">
+                            Limited Seats
+                        </div>
+                        <h2 class="text-2xl font-serif font-bold text-white mb-2">Join Next Batch</h2>
+                        <p class="text-sm text-gray-300 mb-6">Experience our personalized coaching. Get a free skill level assessment!</p>
+
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-start space-x-3 bg-navy-900/60 p-3 rounded-lg border border-gray-800">
+                                <i class="fa-solid fa-clock text-amber-400 text-lg mt-0.5"></i>
+                                <div>
+                                    <p class="font-semibold text-white">Weekday Evenings</p>
+                                    <p class="text-xs text-gray-400">6:00 PM – 9:00 PM (1-hr slots)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 bg-navy-900/60 p-3 rounded-lg border border-gray-800">
+                                <i class="fa-solid fa-calendar-check text-amber-400 text-lg mt-0.5"></i>
+                                <div>
+                                    <p class="font-semibold text-white">Weekend Special</p>
+                                    <p class="text-xs text-gray-400">Customizable flexible hours</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 bg-navy-900/60 p-3 rounded-lg border border-gray-800">
+                                <i class="fa-solid fa-building-columns text-amber-400 text-lg mt-0.5"></i>
+                                <div>
+                                    <p class="font-semibold text-white">Saligramam Campus</p>
+                                    <p class="text-xs text-gray-400">Easy access from Vadapalani & Arumbakkam</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#enquiry" class="mt-6 block w-full py-3 bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold rounded-lg text-center transition-colors">
+                            Claim Free Demo Slot &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US & TARGET AGE GROUP SECTION -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-600 font-semibold uppercase tracking-wider text-sm">Empowering Every Voice</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy-950 mt-2">Tailored Learning for Ages 10 to 35</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-600 mt-4 text-base md:text-lg">
+                    At Word & Wisdom Academy in Saligramam, we believe fluency is not just about words—it's about confidence. We split our batches according to age and goal categories to ensure effective learning.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Group 1: Age 10 - 15 -->
+                <div class="bg-cream rounded-2xl p-8 border border-gray-200 hover:border-amber-400 transition-all hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-child-reaching"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider bg-amber-200/60 text-navy-900 px-2.5 py-1 rounded-full">Ages 10 – 15</span>
+                    <h3 class="text-xl font-bold text-navy-950 mt-3 mb-2">School Students</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Building strong grammar fundamentals, vocabulary expansion, reading comprehension, public speaking, and eliminating stage fear early in life.
+                    </p>
+                    <ul class="text-xs text-gray-700 space-y-2 border-t border-gray-200 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> Grammar & Pronunciation Basics</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> Storytelling & Public Speaking</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> Academic Confidence Support</li>
+                    </ul>
+                </div>
+
+                <!-- Group 2: Age 16 - 22 -->
+                <div class="bg-navy-950 text-white rounded-2xl p-8 border border-navy-800 shadow-xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-amber-500 text-navy-950 text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-lg">
+                        Most Popular
+                    </div>
+                    <div class="w-14 h-14 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 px-2.5 py-1 rounded-full">Ages 16 – 22</span>
+                    <h3 class="text-xl font-bold text-white mt-3 mb-2">College & Graduates</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Preparing students for campus interviews, Group Discussions (GD), presentation skills, and spontaneous conversational fluency.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2 border-t border-gray-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2"></i> Campus Interview Prep</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2"></i> GD & Debate Practice</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2"></i> Accent Refinement</li>
+                    </ul>
+                </div>
+
+                <!-- Group 3: Age 23 - 35 -->
+                <div class="bg-cream rounded-2xl p-8 border border-gray-200 hover:border-amber-400 transition-all hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider bg-amber-200/60 text-navy-900 px-2.5 py-1 rounded-full">Ages 23 – 35</span>
+                    <h3 class="text-xl font-bold text-navy-950 mt-3 mb-2">Job Seekers & Pros</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Corporate communication, email writing, client interaction skills, job interview mastery, and career advancement training.
+                    </p>
+                    <ul class="text-xs text-gray-700 space-y-2 border-t border-gray-200 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> Corporate Email & Vocabulary</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> Mock Job Interviews</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> Workplace Conversation Drill</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEACHING MODES & ONLINE / OFFLINE SECTION -->
+    <section id="courses" class="py-20 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-600 font-semibold uppercase tracking-wider text-sm">Flexible Modes</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy-950 mt-2">Choose How You Want to Learn</h2>
+                <p class="text-gray-600 mt-3">Whether you live near Saligramam or prefer studying from home, we have you covered.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Offline Mode Card -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-md relative hover:shadow-lg transition-shadow">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 rounded-xl bg-navy-950 text-amber-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-serif font-bold text-navy-950">Offline Classes</h3>
+                                <p class="text-xs text-gray-500">In-Person at Saligramam Center</p>
+                            </div>
+                        </div>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Highly Recommended</span>
+                    </div>
+
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Join our well-equipped classroom in Saligramam for maximum face-to-face practice, role-plays, and immediate trainer feedback in a comfortable setting.
+                    </p>
+
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm text-gray-700">
+                            <i class="fa-solid fa-circle-check text-emerald-500 mr-3"></i>
+                            <span>Direct face-to-face interaction with expert trainers</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <i class="fa-solid fa-circle-check text-emerald-500 mr-3"></i>
+                            <span>Group discussions & live activity sessions</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <i class="fa-solid fa-circle-check text-emerald-500 mr-3"></i>
+                            <span>Small batch size for focused 1-on-1 correction</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <i class="fa-solid fa-circle-check text-emerald-500 mr-3"></i>
+                            <span>Physical learning materials & worksheets provided</span>
+                        </div>
+                    </div>
+
+                    <a href="#enquiry" onclick="preselectMode('offline')" class="block w-full text-center py-3 rounded-lg border-2 border-navy-950 text-navy-950 hover:bg-navy-950 hover:text-white font-bold transition-colors">
+                        Select Offline Mode
+                    </a>
+                </div>
+
+                <!-- Online Mode Card -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-md relative hover:shadow-lg transition-shadow">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500 text-navy-950 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-laptop-house"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-serif font-bold text-navy-950">Online Classes</h3>
+                                <p class="text-xs text-gray-500">Live Interactive Virtual Room</p>
+                            </div>
+                        </div>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full">Learn From Anywhere</span>
+                    </div>
+
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Can't commute? Connect with our live instructor-led video classes with full audio participation, recorded lecture backups, and digital handouts.
+                    </p>
+
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center text-sm text-gray-700">
+                            <i class="fa-solid fa-circle-check text-amber-500 mr-3"></i>
+                            <span>Live 2-way audio & video interactive practice</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <i class="fa-solid fa-circle-check text-amber-500 mr-3"></i>
+                            <span>Recorded class backup in case you miss a session</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <i class="fa-solid fa-circle-check text-amber-500 mr-3"></i>
+                            <span>Digital PDF notes & vocabulary flashcards</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <i class="fa-solid fa-circle-check text-amber-500 mr-3"></i>
+                            <span>Ideal for busy professionals & outstation students</span>
+                        </div>
+                    </div>
+
+                    <a href="#enquiry" onclick="preselectMode('online')" class="block w-full text-center py-3 rounded-lg border-2 border-amber-500 text-navy-950 bg-amber-500/10 hover:bg-amber-500 hover:text-navy-950 font-bold transition-colors">
+                        Select Online Mode
+                    </a>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE COURSE & BATCH RECOMMENDER TOOL -->
+            <div class="mt-16 bg-navy-950 rounded-2xl p-6 sm:p-10 text-white shadow-2xl border border-amber-500/30">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="bg-amber-500/20 text-amber-400 text-xs font-bold uppercase px-3 py-1 rounded-full">Interactive Tool</span>
+                    <h3 class="text-2xl font-serif font-bold text-white mt-2">Find Your Ideal Batch & Fee Estimate</h3>
+                    <p class="text-gray-300 text-sm mt-1">Select your age and primary learning goal to get customized timing options.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-2">1. Your Age Group</label>
+                        <select id="calc-age" class="w-full bg-navy-900 border border-gray-700 rounded-lg p-3 text-white text-sm focus:border-amber-400 focus:outline-none" onchange="calculateRecommendation()">
+                            <option value="school">10 - 15 Years (School Student)</option>
+                            <option value="college">16 - 22 Years (College / Graduate)</option>
+                            <option value="pro" selected>23 - 35 Years (Working Professional / Job Seeker)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-2">2. Primary Focus Area</label>
+                        <select id="calc-goal" class="w-full bg-navy-900 border border-gray-700 rounded-lg p-3 text-white text-sm focus:border-amber-400 focus:outline-none" onchange="calculateRecommendation()">
+                            <option value="basics">Fluency & Grammar Fundamentals</option>
+                            <option value="interview">Job Interview & GD Preparation</option>
+                            <option value="accent">Public Speaking & Accent Refinement</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-2">3. Preferred Days</label>
+                        <select id="calc-days" class="w-full bg-navy-900 border border-gray-700 rounded-lg p-3 text-white text-sm focus:border-amber-400 focus:outline-none" onchange="calculateRecommendation()">
+                            <option value="weekdays">Weekdays (Mon-Fri Evening)</option>
+                            <option value="weekends">Weekends (Sat-Sun Flexible)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Recommendation Output Box -->
+                <div id="recommendation-result" class="mt-8 bg-navy-900/90 rounded-xl p-6 border border-amber-500/40 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs text-amber-400 font-bold uppercase tracking-wider">Recommended Plan</span>
+                        <h4 id="rec-title" class="text-xl font-bold text-white mt-1">Professional Communication & Interview Skills</h4>
+                        <p id="rec-desc" class="text-gray-300 text-xs mt-1">Includes 1-hr daily sessions between 6:00 PM and 9:00 PM or weekend customized slots.</p>
+                    </div>
+                    <div class="shrink-0 text-center md:text-right">
+                        <span class="text-xs text-gray-400 block">Duration: 8 Weeks</span>
+                        <a href="#enquiry" class="mt-2 inline-block px-6 py-2.5 bg-amber-500 text-navy-950 font-bold text-sm rounded-lg hover:bg-amber-400 transition-colors">
+                            Book This Batch
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SCHEDULE & TIMINGS SECTION -->
+    <section id="schedule" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-600 font-semibold uppercase tracking-wider text-sm">Timings That Suit You</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy-950 mt-2">Class Schedule & Batch Slots</h2>
+                <p class="text-gray-600 mt-3">We offer convenient evening classes during weekdays and flexible slots over weekends.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Weekday Schedule Card -->
+                <div class="bg-cream rounded-2xl p-8 border-2 border-amber-500/30 shadow-md">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-navy-950 text-amber-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-950">Weekday Batches</h3>
+                            <p class="text-xs text-gray-500">Monday to Friday (Daily 1 Hour)</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="p-4 bg-white rounded-xl border border-gray-200 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-navy-950 block text-sm">Slot 1: Early Evening</span>
+                                <span class="text-xs text-gray-500">Ideal for School Students (Age 10-15)</span>
+                            </div>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-md">6:00 PM – 7:00 PM</span>
+                        </div>
+
+                        <div class="p-4 bg-white rounded-xl border border-gray-200 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-navy-950 block text-sm">Slot 2: Prime Evening</span>
+                                <span class="text-xs text-gray-500">Ideal for College Students & Job Seekers</span>
+                            </div>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-md">7:00 PM – 8:00 PM</span>
+                        </div>
+
+                        <div class="p-4 bg-white rounded-xl border border-gray-200 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-navy-950 block text-sm">Slot 3: Executive Evening</span>
+                                <span class="text-xs text-gray-500">Ideal for Working Professionals</span>
+                            </div>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-md">8:00 PM – 9:00 PM</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4 italic"><i class="fa-solid fa-circle-info mr-1"></i> Note: Batch size is limited to max 12 students for maximum individual interaction.</p>
+                </div>
+
+                <!-- Weekend Schedule Card -->
+                <div class="bg-cream rounded-2xl p-8 border-2 border-navy-900/20 shadow-md">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500 text-navy-950 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-950">Weekend Batches</h3>
+                            <p class="text-xs text-gray-500">Saturday & Sunday (Flexible Hours)</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="p-4 bg-white rounded-xl border border-gray-200 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-navy-950 block text-sm">Morning Fast-Track</span>
+                                <span class="text-xs text-gray-500">Intensive 2-Hour Practical Session</span>
+                            </div>
+                            <span class="px-3 py-1 bg-navy-100 text-navy-900 text-xs font-bold rounded-md">10:00 AM – 12:00 PM</span>
+                        </div>
+
+                        <div class="p-4 bg-white rounded-xl border border-gray-200 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-navy-950 block text-sm">Afternoon Workshop</span>
+                                <span class="text-xs text-gray-500">Role-Plays & Public Speaking Focus</span>
+                            </div>
+                            <span class="px-3 py-1 bg-navy-100 text-navy-900 text-xs font-bold rounded-md">3:00 PM – 5:00 PM</span>
+                        </div>
+
+                        <div class="p-4 bg-white rounded-xl border border-gray-200 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-navy-950 block text-sm">Custom 1-on-1 Slots</span>
+                                <span class="text-xs text-gray-500">Tailored timing for executives</span>
+                            </div>
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-md">Flexible Hours</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4 italic"><i class="fa-solid fa-circle-info mr-1"></i> Weekend classes are popular with IT employees and working professionals around Saligramam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US / KEY HIGHLIGHTS -->
+    <section id="why-us" class="py-20 bg-navy-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-400 font-semibold uppercase tracking-wider text-sm">Why Word & Wisdom</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mt-2">Designed For Rapid Real-World Fluency</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Highlight 1 -->
+                <div class="glass-card p-6 rounded-xl hover:border-amber-400 transition-all">
+                    <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-lg flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Small Batch Size</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        Maximum 10 to 12 students per batch to ensure every individual gets time to speak, ask questions, and receive corrections.
+                    </p>
+                </div>
+
+                <!-- Highlight 2 -->
+                <div class="glass-card p-6 rounded-xl hover:border-amber-400 transition-all">
+                    <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-lg flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Practical Role-Plays</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        Real-life scenario rehearsals like job interviews, office meetings, restaurant ordering, and stage speeches.
+                    </p>
+                </div>
+
+                <!-- Highlight 3 -->
+                <div class="glass-card p-6 rounded-xl hover:border-amber-400 transition-all">
+                    <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-lg flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Accent & Vocabulary</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        Neutralizing mother tongue influence (MTI), refining pronunciation, and building rich vocabulary for professional polish.
+                    </p>
+                </div>
+
+                <!-- Highlight 4 -->
+                <div class="glass-card p-6 rounded-xl hover:border-amber-400 transition-all">
+                    <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-lg flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Affordable Fees</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        Top-quality English training at reasonable fee structures with flexible installment options for students & job seekers.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Student Testimonials Mini Grid -->
+            <div class="mt-16 bg-navy-900/60 rounded-2xl p-8 border border-gray-800">
+                <h3 class="text-xl font-serif font-bold text-amber-400 mb-6 text-center">What Our Saligramam Students Say</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-navy-950 p-5 rounded-xl border border-gray-800 text-xs text-gray-300">
+                        <div class="text-amber-400 mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="italic mb-3">"I joined the 7-8 PM weekday batch. My fear of speaking in English in front of colleagues is completely gone now. Trainer gave personal attention!"</p>
+                        <p class="font-bold text-white text-sm">— Karthik M., <span class="text-gray-400 font-normal">IT Professional (26 yrs)</span></p>
+                    </div>
+
+                    <div class="bg-navy-950 p-5 rounded-xl border border-gray-800 text-xs text-gray-300">
+                        <div class="text-amber-400 mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="italic mb-3">"My 12-year-old daughter joined the 6 PM batch. Her school speech presentation won 1st prize last week! Very happy with Word & Wisdom Academy."</p>
+                        <p class="font-bold text-white text-sm">— S. Revathi, <span class="text-gray-400 font-normal">Parent (Saligramam)</span></p>
+                    </div>
+
+                    <div class="bg-navy-950 p-5 rounded-xl border border-gray-800 text-xs text-gray-300">
+                        <div class="text-amber-400 mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="italic mb-3">"The online weekend mode was super convenient. They helped me clear my software engineer interview with mock sessions."</p>
+                        <p class="font-bold text-white text-sm">— Ananya R., <span class="text-gray-400 font-normal">College Graduate (21 yrs)</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMISSION ENQUIRY & CONTACT SECTION -->
+    <section id="enquiry" class="py-20 bg-cream relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Column: Form -->
+                <div class="lg:col-span-7 bg-white rounded-2xl p-8 border border-gray-200 shadow-xl">
+                    <div class="mb-6">
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-100 px-3 py-1 rounded-full">Book Free Demo</span>
+                        <h2 class="text-3xl font-serif font-bold text-navy-950 mt-2">Admission Enquiry & Free Trial</h2>
+                        <p class="text-gray-600 text-sm mt-1">Fill out this quick form and our academic counselor will contact you within 2 hours.</p>
+                    </div>
+
+                    <form id="enquiry-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Student's Full Name *</label>
+                                <input type="text" required placeholder="e.g. Ramesh Kumar" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Age (10 - 35 Yrs) *</label>
+                                <input type="number" min="10" max="35" required placeholder="e.g. 21" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Phone Number / WhatsApp *</label>
+                                <input type="tel" required placeholder="e.g. 9876543210" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Email Address</label>
+                                <input type="email" placeholder="e.g. ramesh@gmail.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Preferred Teaching Mode *</label>
+                                <select id="form-mode" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm bg-white">
+                                    <option value="offline">Offline Class (Saligramam Campus)</option>
+                                    <option value="online">Online Class (Live Virtual)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Preferred Time Slot *</label>
+                                <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm bg-white">
+                                    <option>Weekdays (6:00 PM – 7:00 PM)</option>
+                                    <option>Weekdays (7:00 PM – 8:00 PM)</option>
+                                    <option>Weekdays (8:00 PM – 9:00 PM)</option>
+                                    <option>Weekend Fast-Track (Sat/Sun)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Any Specific Requirement / Questions?</label>
+                            <textarea rows="3" placeholder="Tell us about your learning goal (e.g. Job interview preparation, public speaking fear)..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-base rounded-xl shadow-lg shadow-amber-500/20 transition-all">
+                            Submit & Request Free Demo Class
+                        </button>
+                    </form>
+
+                    <!-- Success Message Box -->
+                    <div id="form-success" class="hidden mt-4 p-4 bg-emerald-100 border border-emerald-400 text-emerald-800 rounded-xl text-center text-sm font-semibold">
+                        <i class="fa-solid fa-circle-check text-lg mr-2"></i>
+                        Thank you! Your demo request for Word & Wisdom Academy has been received. Our counselor will call you shortly.
+                    </div>
+                </div>
+
+                <!-- Right Column: Location & Contact Info -->
+                <div id="contact" class="lg:col-span-5 space-y-6">
+                    <div class="bg-navy-950 text-white p-8 rounded-2xl shadow-xl border border-gray-800">
+                        <h3 class="text-2xl font-serif font-bold text-white mb-6">Contact & Visit Us</h3>
+
+                        <div class="space-y-6 text-sm">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white text-base">Academy Address</p>
+                                    <p class="text-gray-300 mt-1 leading-relaxed">
+                                        Word & Wisdom Academy<br>
+                                        No. 42, Main Road, Saligramam,<br>
+                                        Near Prasad Studios / Vadapalani Bus Depot,<br>
+                                        Chennai, Tamil Nadu - 600093
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white text-base">Phone & Enquiries</p>
+                                    <p class="text-gray-300 mt-1">
+                                        <a href="tel:8754440013" class="hover:text-amber-400 font-semibold">+91 87544 40013</a> &nbsp;|&nbsp; 
+                                        <a href="tel:7299725206" class="hover:text-amber-400 font-semibold">+91 72997 25206</a>
+                                    </p>
+                                    <p class="text-xs text-amber-400 mt-0.5">Lines open 9:00 AM – 8:30 PM daily</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white text-base">Email Support</p>
+                                    <p class="text-gray-300 mt-1">admissions@wordandwisdom.in</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Direct WhatsApp Action Buttons -->
+                        <div class="mt-8 pt-6 border-t border-gray-800 space-y-3">
+                            <a href="https://wa.me/918754440013?text=Hi%20Word%20and%20Wisdom%20Academy,%20I%20want%20to%20know%20more%20about%20Spoken%20English%20classes%20in%20Saligramam." target="_blank" class="flex items-center justify-center space-x-2 w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-colors text-sm">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Chat on WhatsApp (+91 87544 40013)</span>
+                            </a>
+                            <a href="https://wa.me/917299725206?text=Hi%20Word%20and%20Wisdom%20Academy,%20I%20want%20to%20know%20more%20about%20Spoken%20English%20classes%20in%20Saligramam." target="_blank" class="flex items-center justify-center space-x-2 w-full py-3 bg-emerald-700 hover:bg-emerald-600 text-white font-bold rounded-xl transition-colors text-sm">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Chat on WhatsApp (+91 72997 25206)</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Simulated Interactive Map Card -->
+                    <div class="bg-white p-4 rounded-2xl border border-gray-200 shadow-md">
+                        <div class="relative w-full h-48 bg-slate-200 rounded-xl overflow-hidden flex items-center justify-center text-center p-4">
+                            <!-- Styled Map Representation -->
+                            <div class="absolute inset-0 bg-cover bg-center opacity-70" style="background-image: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=80');"></div>
+                            <div class="absolute inset-0 bg-navy-950/60"></div>
+                            <div class="relative z-10 text-white">
+                                <div class="w-10 h-10 bg-amber-500 text-navy-950 rounded-full flex items-center justify-center mx-auto mb-2 font-bold animate-bounce shadow-lg">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
+                                </div>
+                                <p class="font-bold text-sm">Saligramam Center, Chennai</p>
+                                <p class="text-xs text-gray-200">5 mins from Vadapalani Metro Station</p>
+                                <a href="https://maps.google.com/?q=Saligramam+Chennai" target="_blank" class="mt-2 inline-block px-3 py-1 bg-white text-navy-950 text-xs font-bold rounded shadow hover:bg-gray-100">
+                                    Open in Google Maps &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-gray-400 border-t border-gray-800 text-sm py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 text-white font-serif font-bold text-xl mb-3">
+                        <span class="text-amber-400">Word & Wisdom</span> Academy
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Saligramam's leading spoken English and communication academy empowering students and professionals aged 10 to 35 with fluent English skills.
+                    </p>
+                </div>
+
+                <div>
+                    <p class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Quick Links</p>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#about" class="hover:text-amber-400 transition-colors">About Academy</a></li>
+                        <li><a href="#courses" class="hover:text-amber-400 transition-colors">Online & Offline Modes</a></li>
+                        <li><a href="#schedule" class="hover:text-amber-400 transition-colors">Batch Timings</a></li>
+                        <li><a href="#why-us" class="hover:text-amber-400 transition-colors">Why Choose Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Nearby Neighborhoods</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Conveniently accessible for students residing in Saligramam, Vadapalani, Virugambakkam, Arumbakkam, K.K. Nagar, and Koyambedu.
+                    </p>
+                </div>
+
+                <div>
+                    <p class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Class Timings</p>
+                    <p class="text-xs text-gray-300">
+                        <strong class="text-amber-400">Weekdays:</strong> 6:00 PM – 9:00 PM<br>
+                        <strong class="text-amber-400">Weekends:</strong> Flexible Day Slots<br>
+                        <strong class="text-amber-400">Age Group:</strong> 10 to 35 Years
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>&copy; 2026 Word & Wisdom Academy, Saligramam, Chennai. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0">Spoken English • Public Speaking • Corporate Communication</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            });
+        });
+
+        // Preselect mode from course cards
+        function preselectMode(mode) {
+            const selectEl = document.getElementById('form-mode');
+            if (selectEl) {
+                selectEl.value = mode;
+            }
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successBox = document.getElementById('form-success');
+            const form = document.getElementById('enquiry-form');
+            
+            successBox.classList.remove('hidden');
+            form.reset();
+
+            setTimeout(() => {
+                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+
+        // Interactive Batch Recommender Logic
+        function calculateRecommendation() {
+            const age = document.getElementById('calc-age').value;
+            const goal = document.getElementById('calc-goal').value;
+            const days = document.getElementById('calc-days').value;
+
+            const recTitle = document.getElementById('rec-title');
+            const recDesc = document.getElementById('rec-desc');
+
+            let title = "";
+            let desc = "";
+
+            if (age === 'school') {
+                title = "Young Orators & Grammar Mastery Batch (Ages 10-15)";
+                desc = days === 'weekdays' 
+                    ? "Focus on school vocabulary, sentence building & stage confidence. Recommended slot: 6:00 PM – 7:00 PM (Mon-Fri)."
+                    : "Weekend interactive public speaking workshop with storytelling activities. Flexible morning slots available.";
+            } else if (age === 'college') {
+                title = "Campus Placement & Group Discussion Module (Ages 16-22)";
+                desc = days === 'weekdays' 
+                    ? "Mock job interviews, accent correction & fast-paced English conversation. Recommended slot: 7:00 PM – 8:00 PM (Mon-Fri)."
+                    : "Weekend fast-track practical sessions tailored for college students and recent grads.";
+            } else {
+                title = "Corporate Executive Communication & Fluency (Ages 23-35)";
+                desc = days === 'weekdays' 
+                    ? "Professional email etiquette, client calls & workplace English. Recommended slot: 8:00 PM – 9:00 PM (Mon-Fri)."
+                    : "Customized weekend slots designed for busy working professionals in and around Saligramam.";
+            }
+
+            recTitle.textContent = title;
+            recDesc.textContent = desc;
+        }
+
+        // Initialize recommendation on load
+        window.onload = function() {
+            calculateRecommendation();
+        };
+    </script>
+</body>
+</html>
